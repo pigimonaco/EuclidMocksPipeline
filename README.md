@@ -12,22 +12,22 @@ SELECT `ra_gal`, `dec_gal`, `x_gal`, `y_gal`, `z_gal`, `vx_gal`, `vy_gal`, `vz_g
         AND `x_gal` >= 0
 
 ## Directory Tree:
-[root]/Pipeline                        # code
-[root]/Products
-               /RawCatalogs            # Cosmohub query with various footprints applied
-               /Footprints             # survey footprints (see below)
-               /ExtinctionMaps         # extinction and reddening maps from various sources
-               /SDHOD                  # Stripped-down HOD versions
-               /GalaxyCatalogs         # complete galaxy catalogs
-               /RandomCatalogs         # complete random catalogs
-               /Selections             # selections to be applied to galaxy catalogs
-               /Catalogs4LE3           # catalogs readable by LE3 PFs, in redshift slices
-               /NumberCounts           # galaxy counts
-               /Cls                    # angular maps and angular clustering measurements
-               /PkParams               # parameter files for PK code
-               /PkScripts              # scripts to run the PK code
-               /Pks                    # measured PKs
-               /Plots                  # various plots
+* [root]/Pipeline                        # code
+* [root]/Products
+*               /RawCatalogs            # Cosmohub query with various footprints applied
+*               /Footprints             # survey footprints (see below)
+*               /ExtinctionMaps         # extinction and reddening maps from various sources
+*               /SDHOD                  # Stripped-down HOD versions
+*               /GalaxyCatalogs         # complete galaxy catalogs
+*               /RandomCatalogs         # complete random catalogs
+*               /Selections             # selections to be applied to galaxy catalogs
+*               /Catalogs4LE3           # catalogs readable by LE3 PFs, in redshift slices
+*               /NumberCounts           # galaxy counts
+*               /Cls                    # angular maps and angular clustering measurements
+*               /PkParams               # parameter files for PK code
+*               /PkScripts              # scripts to run the PK code
+*               /Pks                    # measured PKs
+*               /Plots                  # various plots
 
 ## Definitions:
 
