@@ -61,3 +61,4 @@ tb.header['SKYFRAC']=sky_fraction
 
 tb.writeto(footprint_fname, overwrite=True)
 
+print("DONE!!!")

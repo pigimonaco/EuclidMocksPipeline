@@ -31,17 +31,27 @@ cat = fits.getdata(input.master_fname())
 print("# selecting galaxies...")
 
 selection = cat[input.flux_key] > input.logflux_limit
+if input.lf_model=='0':
+    selection &= cat['kind']==0
 
 Nextract = selection.sum()
 
 print("# extracting {} galaxies".format(Nextract))
 
-extract = np.empty(Nextract, 
-                   dtype=[('x_gal', np.float), ('y_gal', np.float), ('z_gal', np.float),
-                          ('ra_gal', np.float), ('dec_gal', np.float), ('kind', np.int), 
-                          ('true_redshift_gal', np.float), ('observed_redshift_gal', np.float), 
-                          ('halo_lm', np.float), ('galaxy_id', np.int), ('halo_id', np.int), 
-                          (input.flux_key, np.float), ('sh_'+input.flux_key, np.float)])
+if input.flux_key=='halo_lm':
+    extract = np.empty(Nextract, 
+                       dtype=[('x_gal', np.float), ('y_gal', np.float), ('z_gal', np.float),
+                              ('ra_gal', np.float), ('dec_gal', np.float), ('kind', np.int), 
+                              ('true_redshift_gal', np.float), ('observed_redshift_gal', np.float), 
+                              ('halo_lm', np.float), ('galaxy_id', np.int), ('halo_id', np.int), 
+                              ('sh_'+input.flux_key, np.float)])
+else:
+    extract = np.empty(Nextract, 
+                       dtype=[('x_gal', np.float), ('y_gal', np.float), ('z_gal', np.float),
+                              ('ra_gal', np.float), ('dec_gal', np.float), ('kind', np.int), 
+                              ('true_redshift_gal', np.float), ('observed_redshift_gal', np.float), 
+                              ('halo_lm', np.float), ('galaxy_id', np.int), ('halo_id', np.int), 
+                              (input.flux_key, np.float), ('sh_'+input.flux_key, np.float)])
 
 for field in extract.dtype.names:
     print("    processing {}".format(field))
