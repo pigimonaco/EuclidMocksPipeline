@@ -15,7 +15,7 @@ from os import path
 import sys
 
 # directory where products are stored, absolute path
-outdir = '/euclid_data/pmonaco/EuclidMocks/Products.NEW/'
+outdir = '/euclid_data/pmonaco/EuclidMocks/Products/'
 
 # master catalog queried from Cosmohub
 query = '8614'
